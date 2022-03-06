@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
+    <title>Gamepad.js Recorder</title>
+    <link rel="stylesheet" type="text/css" href="src/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><b>/gamepad.js</b> Recorder</h1>
+      <h2>Connect a controller and follow the prompts</h2>
+    </header>
+    <main>
+      <div>
+        <blockquote>
+          Press the highlighted button on your controller.
+        </blockquote>
+      </div>
+      <div class="controller">
+        <div class="controller-buttons">
+          <h3 class="controller-buttons-header">Buttons</h3>
+          <div class="controller-buttons-svg">
+            <svg width="195" height="195" xmlns="http://www.w3.org/2000/svg">
+              <g
+                id="buttons"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <circle
+                  id="button_1_highlight"
+                  fill="#419BF3"
+                  cx="97.5"
+                  cy="152.5"
+                  r="42.5"
+                ></circle>
+                <g id="button_1" transform="translate(70 125)">
+                  <g id="Group">
+                    <circle
+                      id="shadow"
+                      fill-opacity=".5"
+                      fill="#000"
+                      cx="29.5"
+                      cy="29.5"
+                      r="27.5"
+                    ></circle>
+                    <circle
+                      id="Oval"
+                      stroke="#000"
+                      stroke-width="4"
+                      fill="#FFF"
+                      cx="27.5"
+                      cy="27.5"
+                      r="25.5"
+                    ></circle>
+                  </g>
+                  <path
+                    id="Line"
+                    stroke="#000"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 19l18 18"
+                  ></path>
+                  <path
+                    id="Line-Copy"
+                    stroke="#000"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 37l18-18"
+                  ></path>
+                </g>
+                <circle
+                  id="button_2_highlight"
+                  fill="#419BF3"
+                  cx="152.5"
+                  cy="97.5"
+                  r="42.5"
+                ></circle>
+                <g id="button_2" transform="translate(125 70)">
+                  <g id="Group">
+                    <circle
+                      id="shadow"
+                      fill-opacity=".5"
+                      fill="#000"
+                      cx="29.5"
+                      cy="29.5"
+                      r="27.5"
+                    ></circle>
+                    <circle
+                      id="Oval"
+                      stroke="#000"
+                      stroke-width="4"
+                      fill="#FFF"
+                      cx="27.5"
+                      cy="27.5"
+                      r="25.5"
+                    ></circle>
+                  </g>
+                  <circle
+                    id="Oval"
+                    stroke="#000"
+                    stroke-width="4"
+                    cx="27.5"
+                    cy="27.5"
+                    r="10.5"
+                  ></circle>
+                </g>
+                <circle
+                  id="button_3_highlight"
+                  fill="#419BF3"
+                  cx="42.5"
+                  cy="97.5"
+                  r="42.5"
+                ></circle>
+                <g id="button_3" transform="translate(15 70)">
+                  <g id="Group">
+                    <circle
+                      id="shadow"
+                      fill-opacity=".5"
+                      fill="#000"
+                      cx="29.5"
+                      cy="29.5"
+                      r="27.5"
+                    ></circle>
+                    <circle
+                      id="Oval"
+                      stroke="#000"
+                      stroke-width="4"
+                      fill="#FFF"
+                      cx="27.5"
+                      cy="27.5"
+                      r="25.5"
+                    ></circle>
+                  </g>
+                  <rect
+                    id="Rectangle"
+                    stroke="#000"
+                    stroke-width="4"
+                    x="19"
+                    y="19"
+                    width="18"
+                    height="18"
+                    rx="4"
+                  ></rect>
+                </g>
+                <circle
+                  id="button_4_highlight"
+                  fill="#419BF3"
+                  cx="97.5"
+                  cy="42.5"
+                  r="42.5"
+                ></circle>
+                <g id="button_4" transform="translate(70 15)">
+                  <g id="Group">
+                    <circle
+                      id="shadow"
+                      fill-opacity=".5"
+                      fill="#000"
+                      cx="29.5"
+                      cy="29.5"
+                      r="27.5"
+                    ></circle>
+                    <circle
+                      id="Oval"
+                      stroke="#000"
+                      stroke-width="4"
+                      fill="#FFF"
+                      cx="27.5"
+                      cy="27.5"
+                      r="25.5"
+                    ></circle>
+                  </g>
+                  <path
+                    id="Path"
+                    stroke="#000"
+                    stroke-width="4"
+                    stroke-linejoin="round"
+                    d="M17 36.822L27.796 15l10.796 21.822z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="controller-buttons">
+          <h3 class="controller-buttons-header">Shoulder Buttons</h3>
+          <div class="controller-buttons-svg">
+            <svg width="293" height="134" xmlns="http://www.w3.org/2000/svg">
+              <g
+                id="shoulder_buttons"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M287 30h-75.931a4 4 0 00-3.89 4.93l21.84 91.394a10 10 0 009.726 7.676H271c11.046 0 20-8.954 20-20V34a4 4 0 00-4-4z"
+                  id="shoulder_bottom_right_highlight"
+                  fill="#419BF3"
+                ></path>
+                <path
+                  d="M283 0H180c-5.523 0-10 4.477-10 10v32a4 4 0 004 4h115a4 4 0 004-4V10c0-5.523-4.477-10-10-10z"
+                  id="shoulder_top_right_highlight"
+                  fill="#419BF3"
+                ></path>
+                <path
+                  d="M280.797 43h-54.586a4 4 0 00-3.9 4.885l15.72 69.327a10 10 0 009.753 7.788h17.013c11.046 0 20-8.954 20-20V47a4 4 0 00-4-4z"
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                ></path>
+                <path
+                  d="M278.797 43c.553 0 1.053.224 1.415.586.362.362.585.862.585 1.414h0v58c0 4.97-2.014 9.47-5.272 12.728A17.944 17.944 0 01262.797 121h0-17.013a7.986 7.986 0 01-4.993-1.749 7.986 7.986 0 01-2.81-4.482h0l-15.72-69.327c-.05-.994.174-1.494.536-1.856a1.994 1.994 0 011.414-.586h0z"
+                  id="shoulder_bottom_right"
+                  stroke="#000"
+                  stroke-width="4"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="M275 12h-83c-5.523 0-10 4.477-10 10v12a4 4 0 004 4h95a4 4 0 004-4V22c0-5.523-4.477-10-10-10z"
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                ></path>
+                <path
+                  d="M273 12c2.21 0 4.21.895 5.657 2.343A7.975 7.975 0 01281 20h0v12c0 .552-.224 1.052-.586 1.414A1.994 1.994 0 01279 34h0-95a1.994 1.994 0 01-1.414-.586A1.994 1.994 0 01182 32h0V20c0-2.21.895-4.21 2.343-5.657A7.975 7.975 0 01190 12h0z"
+                  id="shoulder_top_right"
+                  stroke="#000"
+                  stroke-width="4"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="M5.797 30H81.73a4 4 0 013.89 4.93l-21.84 91.394A10 10 0 0154.051 134H21.797c-11.045 0-20-8.954-20-20V34a4 4 0 014-4z"
+                  id="shoulder_bottom_left_highlight"
+                  fill="#419BF3"
+                ></path>
+                <path
+                  d="M10 0h103c5.523 0 10 4.477 10 10v32a4 4 0 01-4 4H4a4 4 0 01-4-4V10C0 4.477 4.477 0 10 0z"
+                  id="shoulder_top_left_highlight"
+                  fill="#419BF3"
+                ></path>
+                <path
+                  d="M16 43h54.586a4 4 0 013.901 4.885l-15.72 69.327A10 10 0 0149.013 125H32c-11.046 0-20-8.954-20-20V47a4 4 0 014-4z"
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                ></path>
+                <path
+                  d="M68.586 43a1.99 1.99 0 011.414.586c.362.362.586.862.586 1.414h0l-15.77 69.77a7.986 7.986 0 01-2.81 4.481A7.986 7.986 0 0147.014 121h0H30c-4.97 0-9.47-2.015-12.728-5.272A17.944 17.944 0 0112 103h0V45c0-.552.224-1.052.586-1.414A1.994 1.994 0 0114 43h0z"
+                  id="shoulder_bottom_left"
+                  stroke="#000"
+                  stroke-width="4"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="M22 12h83c5.523 0 10 4.477 10 10v12a4 4 0 01-4 4H16a4 4 0 01-4-4V22c0-5.523 4.477-10 10-10z"
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                ></path>
+                <path
+                  d="M103 12c2.21 0 4.21.895 5.657 2.343A7.975 7.975 0 01111 20h0v12c0 .552-.224 1.052-.586 1.414A1.994 1.994 0 01109 34h0-95a1.994 1.994 0 01-1.414-.586A1.994 1.994 0 0112 32h0V20c0-2.21.895-4.21 2.343-5.657A7.975 7.975 0 0120 12h0z"
+                  id="shoulder_top_left"
+                  stroke="#000"
+                  stroke-width="4"
+                  fill="#FFF"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="controller-buttons">
+          <h3 class="controller-buttons-header">
+            Select/Start Buttons
+          </h3>
+          <div class="controller-buttons-svg">
+            <svg width="176" height="73" xmlns="http://www.w3.org/2000/svg">
+              <g
+                id="select_start_buttons"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <circle
+                  id="start_highlight"
+                  fill="#419BF3"
+                  cx="139.5"
+                  cy="36.5"
+                  r="36.5"
+                ></circle>
+                <rect
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                  x="121"
+                  y="28"
+                  width="41"
+                  height="21"
+                  rx="8"
+                ></rect>
+                <rect
+                  id="start"
+                  stroke="#000"
+                  stroke-width="4"
+                  fill="#FFF"
+                  x="121"
+                  y="28"
+                  width="37"
+                  height="17"
+                  rx="8"
+                ></rect>
+                <circle
+                  id="select_highlight"
+                  fill="#419BF3"
+                  cx="36.5"
+                  cy="36.5"
+                  r="36.5"
+                ></circle>
+                <rect
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                  x="18"
+                  y="28"
+                  width="41"
+                  height="21"
+                  rx="8"
+                ></rect>
+                <rect
+                  id="select"
+                  stroke="#000"
+                  stroke-width="4"
+                  fill="#FFF"
+                  x="18"
+                  y="28"
+                  width="37"
+                  height="17"
+                  rx="8"
+                ></rect>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="controller-buttons">
+          <h3 class="controller-buttons-header">Analog Sticks</h3>
+          <div class="controller-buttons-svg">
+            <svg width="244" height="111" xmlns="http://www.w3.org/2000/svg">
+              <g
+                id="stick_buttons"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <circle
+                  id="stick_button_left_highlight"
+                  fill="#419BF3"
+                  cx="55.5"
+                  cy="55.5"
+                  r="55.5"
+                ></circle>
+                <g id="stick_button_left" transform="translate(13 13)">
+                  <circle
+                    id="shadow"
+                    fill-opacity=".5"
+                    fill="#000"
+                    cx="44.5"
+                    cy="44.5"
+                    r="42.5"
+                  ></circle>
+                  <circle
+                    id="Oval"
+                    stroke="#000"
+                    stroke-width="4"
+                    fill="#FFF"
+                    cx="42.5"
+                    cy="42.5"
+                    r="40.5"
+                  ></circle>
+                  <circle
+                    id="shadow"
+                    fill-opacity=".5"
+                    fill="#000"
+                    cx="45.5"
+                    cy="45.5"
+                    r="27.5"
+                  ></circle>
+                  <g
+                    id="Group-6"
+                    transform="translate(15 15)"
+                    fill="#FFF"
+                    stroke="#000"
+                  >
+                    <circle
+                      id="Oval-Copy"
+                      stroke-width="4"
+                      cx="27.5"
+                      cy="27.5"
+                      r="25.5"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-2"
+                      stroke-width="2"
+                      cx="27.5"
+                      cy="27.5"
+                      r="19.5"
+                    ></circle>
+                  </g>
+                </g>
+                <circle
+                  id="stick_button_right_highlight"
+                  fill="#419BF3"
+                  cx="188.5"
+                  cy="55.5"
+                  r="55.5"
+                ></circle>
+                <g id="stick_button_right" transform="translate(146 13)">
+                  <circle
+                    id="shadow"
+                    fill-opacity=".5"
+                    fill="#000"
+                    cx="44.5"
+                    cy="44.5"
+                    r="42.5"
+                  ></circle>
+                  <circle
+                    id="Oval"
+                    stroke="#000"
+                    stroke-width="4"
+                    fill="#FFF"
+                    cx="42.5"
+                    cy="42.5"
+                    r="40.5"
+                  ></circle>
+                  <circle
+                    id="shadow"
+                    fill-opacity=".5"
+                    fill="#000"
+                    cx="45.5"
+                    cy="45.5"
+                    r="27.5"
+                  ></circle>
+                  <g
+                    id="Group-6"
+                    transform="translate(15 15)"
+                    fill="#FFF"
+                    stroke="#000"
+                  >
+                    <circle
+                      id="Oval-Copy"
+                      stroke-width="4"
+                      cx="27.5"
+                      cy="27.5"
+                      r="25.5"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-2"
+                      stroke-width="2"
+                      cx="27.5"
+                      cy="27.5"
+                      r="19.5"
+                    ></circle>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="controller-buttons">
+          <h3 class="controller-buttons-header">D-Pad</h3>
+          <div class="controller-buttons-svg">
+            <svg width="182" height="182" xmlns="http://www.w3.org/2000/svg">
+              <g
+                id="d_pad"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <circle
+                  id="d_pad_right_highlight"
+                  fill="#419BF3"
+                  cx="137"
+                  cy="91"
+                  r="45"
+                ></circle>
+                <circle
+                  id="d_pad_left_highlight"
+                  fill="#419BF3"
+                  cx="45"
+                  cy="91"
+                  r="45"
+                ></circle>
+                <circle
+                  id="d_pad_down_highlight"
+                  fill="#419BF3"
+                  cx="91"
+                  cy="137"
+                  r="45"
+                ></circle>
+                <circle
+                  id="d_pad_up_highlight"
+                  fill="#419BF3"
+                  cx="91"
+                  cy="45"
+                  r="45"
+                ></circle>
+                <path
+                  d="M113 25a4 4 0 014 4v44h44a4 4 0 014 4v36a4 4 0 01-4 4h-44v44a4 4 0 01-4 4H77a4 4 0 01-4-4v-44.001L29 117a4 4 0 01-4-4V77a4 4 0 014-4l44-.001V29a4 4 0 014-4h36z"
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                ></path>
+                <path
+                  d="M109 21a4 4 0 014 4v44h44a4 4 0 014 4v36a4 4 0 01-4 4h-44v44a4 4 0 01-4 4H73a4 4 0 01-4-4v-44.001L25 113a4 4 0 01-4-4V73a4 4 0 014-4l44-.001V25a4 4 0 014-4h36z"
+                  stroke="#000"
+                  stroke-width="4"
+                  fill="#FFF"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  id="d_pad_right"
+                  stroke="#000"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                  d="M126 80l22 11-22 11z"
+                ></path>
+                <path
+                  id="d_pad_up_left"
+                  stroke="#000"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                  d="M56 102L34 91l22-11z"
+                ></path>
+                <path
+                  id="d_pad_down"
+                  stroke="#000"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                  d="M102 126l-11 22-11-22z"
+                ></path>
+                <path
+                  id="d_pad_up"
+                  stroke="#000"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                  d="M80 56l11-22 11 22z"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="controller-buttons">
+          <h3 class="controller-buttons-header">Vendor Button</h3>
+          <div class="controller-buttons-svg">
+            <svg width="101" height="101" xmlns="http://www.w3.org/2000/svg">
+              <g
+                id="vendor"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <ellipse
+                  id="vendor_highlight"
+                  fill="#419BF3"
+                  cx="50.5"
+                  cy="50.5"
+                  rx="50.5"
+                  ry="50"
+                ></ellipse>
+                <circle
+                  id="shadow"
+                  fill-opacity=".5"
+                  fill="#000"
+                  cx="53"
+                  cy="53"
+                  r="36"
+                ></circle>
+                <g transform="translate(15 15)">
+                  <circle
+                    id="Oval"
+                    stroke="#000"
+                    stroke-width="4"
+                    fill="#FFF"
+                    cx="36"
+                    cy="36"
+                    r="34"
+                  ></circle>
+                  <path
+                    d="M38.536 43.776c0-1.152.104-2.128.312-2.928.208-.8.504-1.496.888-2.088a8.642 8.642 0 011.344-1.608c.512-.48 1.072-.976 1.68-1.488a118.03 118.03 0 001.536-1.368 8.7 8.7 0 001.368-1.584c.4-.592.72-1.296.96-2.112.24-.816.36-1.784.36-2.904 0-1.536-.272-2.912-.816-4.128-.544-1.216-1.288-2.232-2.232-3.048-.944-.816-2.048-1.44-3.312-1.872C39.36 18.216 37.992 18 36.52 18c-1.76 0-3.352.28-4.776.84-1.424.56-2.64 1.352-3.648 2.376-1.008 1.024-1.776 2.256-2.304 3.696-.528 1.44-.792 3.04-.792 4.8h5.472c0-2.176.472-3.912 1.416-5.208.944-1.296 2.408-1.944 4.392-1.944.416 0 .896.096 1.44.288a4.76 4.76 0 011.536.912c.48.416.888.968 1.224 1.656.336.688.504 1.512.504 2.472 0 .8-.104 1.488-.312 2.064a5.494 5.494 0 01-.864 1.56 8.522 8.522 0 01-1.248 1.272c-.464.384-.952.8-1.464 1.248a13.474 13.474 0 00-1.656 1.656 8.064 8.064 0 00-1.176 1.944c-.32.736-.552 1.592-.696 2.568-.144.976-.216 2.168-.216 3.576h5.184zm.528 9.312v-6h-6.432v6h6.432z"
+                    id="?"
+                    fill="#222"
+                    fill-rule="nonzero"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="btn-primary">Start Recording</button>
+      </div>
+    </main>
+    <footer>
+      <pre>{}</pre>
+    </footer>
+    <script src="src/recorder.js"></script>
+  </body>
+</html>

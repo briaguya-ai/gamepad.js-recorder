@@ -1,0 +1,134 @@
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  padding: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica", "Arial",
+    sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  color: #222;
+  letter-spacing: 0.01em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body > header {
+  flex: 0;
+  padding: 3rem;
+}
+
+body > main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin: 1rem;
+  font-size: 4rem;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+h2 {
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+blockquote {
+  margin: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+a {
+  color: inherit;
+}
+
+pre,
+code {
+  font-family: "Monaco", monospace;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  background-color: #eee;
+}
+
+pre {
+  margin: 1rem;
+  padding: 1rem;
+  user-select: all;
+  text-align: left;
+}
+
+code {
+  display: inline-block;
+  padding: 0.25rem;
+}
+
+svg [id$="_highlight"]:not(.visible) {
+  display: none;
+}
+
+.controller {
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 100rem;
+  display: flex;
+  align-content: center;
+  align-items: stretch;
+}
+
+.controller-buttons {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+}
+
+.controller-buttons-header {
+  flex: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.controller-buttons-svg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  font-family: inherit;
+  font-size: 2rem;
+  color: #fff;
+  border: 0;
+  border-radius: 1rem;
+  background: none;
+  cursor: pointer;
+  background-color: #1b8af7;
+}
