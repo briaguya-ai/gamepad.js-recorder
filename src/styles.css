@@ -86,7 +86,7 @@ code {
   padding: 0.25rem;
 }
 
-svg [id$="_highlight"]:not(.visible) {
+img:not(.visible) {
   display: none;
 }
 
